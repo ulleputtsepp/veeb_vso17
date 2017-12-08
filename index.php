@@ -13,9 +13,9 @@
  * realine kommentaar
  */
 //stringide väljastamine
-print "See on tavaline tekst";
-print 'See on ka tavaline tekst';
+print "See on tavaline tekst<br>\n";
+print 'See on ka tavaline tekst<br />';
 // echo väljastamiskaäsuga
-echo "See on tavaline tekst jutumärkides";
-echo 'See on tavaline tekst ülekomades';
+echo "See on tavaline tekst jutumärkides<br>\n";
+echo 'See on tavaline tekst ülekomades<br/>';
 ?>
