@@ -1,2 +1,2 @@
 # veeb_vso17
-# Programmeerimisvahendid
+# Programmeerimisvahendite kasutamine
