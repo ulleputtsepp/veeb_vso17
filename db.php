@@ -11,4 +11,8 @@ require_once 'db_fnk.php';
 $dbYhendus = yhendus();
 // koostame sql lause ja saadame andmebaasi
 $sql = 'SHOW TABLES'; //päring mis peaks näitama tabeli sisu
-$tulemus = saadaParing($dbYhendus, $sql);
+$tulemus = annaAndmed($dbYhendus, $sql); //kui siin kirjutan funktsiooni nime 'saadaParing', siis lühivariant, kui annaAndmed, siis näen kõiki tabeleid
+// uurime tulemuse sisu test kujul
+echo '<pre>';
+print_r($tulemus);
+echo '<pre>';
