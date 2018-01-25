@@ -5,12 +5,12 @@
  * Date: 25-Jan-18
  * Time: 10:47
  */
-require _once 'tekst.php';
+require_once 'tekst.php';
 
 // loome teksti objekt
 // $minuTekst = new tekst(); //teksti töötluse element, see tuli klassifailist
 // määrame konkretse sisu
-$minuTekst->new tekst('Teme maailm!');// välja, sest on juba konstruktoris: maaraTekst('Tere maailm!');
+$minuTekst = new tekst('Tere maailm!');// välja, sest on juba konstruktoris: maaraTekst('Tere maailm!');
 // vaatame objekti sisse
 echo '<pre>';
 print_r($minuTekst);
