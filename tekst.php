@@ -19,6 +19,6 @@ class tekst
     }
     // teksti väljastamine
     function prindiTekst(){
-        echo $this->sone.'<br />';
+        echo $this->sone.'<br />'; // esialgu puhas leht; teen uue tavalise PHP faili tesktitest.php
     }
 } // klassi lõpp
