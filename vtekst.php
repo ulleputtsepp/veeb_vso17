@@ -8,5 +8,20 @@
 require_once  'tekst.php';
 class vtekst extends tekst
 {
-// see klass kasutab seda mis juba tehtud
+    // see klass kasutab seda mis juba tehtud; lisame värvi
+    var $varv = '';
+
+    /**
+     * vtekst constructor.
+     * @param string $varv
+     */
+    public function __construct($sone, $varv)
+    {
+        parent::__construct($sone);
+        $this->maaraVarv($varv);
+    }
+
+    function maaraVarv($varv){
+        $this->varv = $varv;
+    }
 }
