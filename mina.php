@@ -6,7 +6,7 @@
  * Time: 12:21
  */
 $nimi="Ulle";
-    echo "Minu nimi on:"." ".$nimi.'<br />';
+    echo "Minu nimi on: ".$nimi.'<br />';
 
 // konstandi määramine, väärtuse andmine, echo-s $-märki pole vaja konstandis
  define('MINU_NIMI','Ulle');
