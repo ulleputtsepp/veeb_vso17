@@ -13,16 +13,17 @@ $arvud[]=4;
 $arvud[]=2;
 $arvud[]=3;
 
+
 // või nii, väärtustega
 $arvud1=array(1,2,3,4,5);
 
-echo $arvud; //väljastades ei näe arve; väljastamiseks nt kasutaja jaoks 'pre':
+echo $arvud1; //väljastades ei näe arve; väljastamiseks kasutaja jaoks nest print_r btw '<pre>','</pre>', :
 echo '<pre>';
 print_r($arvud); //testväljastus
 echo '</pre>';
 // korralik väljastus
 for($i=0; $i<count($arvud); $i++){
-    echo '<b>'.$arvud[$i].'</br><br />';
+    echo '<b>'.$arvud[$i].'</b><br />';
 }
 foreach ($arvud1 as $arv){
     echo '<i>'.$arv.'</i><br />';
@@ -43,8 +44,8 @@ function looMassiiv($elementideArv)
 {
     $massiiv = array(); //kõigepealt tühi massiiv
     for ($kord = 1; $kord <= $elementideArv; $kord++) {
-        $juhuArv = rand(100, 999);
-        $massiiv[] = $juhuArv;
+        $juhuarv = rand(100, 999);
+        $massiiv[] = $juhuarv;
     }
     return $massiiv;
 }
@@ -117,7 +118,23 @@ valjastaMassiiv($testMassiiv);
  * Tulemus väljastatakse antud funktsiooni abil kujul:
  * Tulemus: 1 * 6 * 5 = 30
 */
-
+/**
+ * @param $joru
+ */
+echo '<br />';
+function elementideKorrutis($joru){
+    $suurem = array();
+    foreach ($joru as $k => $v){
+        if ($k % 2 == 0 and $v > 0) {
+            $suurem[] = $v;
+            //print_r($suurem); //uus massiiv [0]=>1,[1]=>6,[2]=>5
+            $korrutis = array_product($suurem);
+           }
+        }
+        echo 'Korrutis on: '.$suurem[0]." * ".$suurem[1]." * ".$suurem[2]." = ".$korrutis.'<br />';
+    }
+    $testMass=elementideKorrutis([1,0,6,0,0,3,5]);
+    echo '<hr />';
 /*
  * 5.
  * Töötluses kasutada massiiv
@@ -131,3 +148,15 @@ valjastaMassiiv($testMassiiv);
  * grupeerimisfunktisoone ega muuta antud massiivi
  * */
 
+function mitteDubleeri($massiiv){
+    $yhekordne = '';
+       foreach ($massiiv as $value){
+          if ($yhekordne != $value){
+            $yhekordne = $value;
+            echo $value;
+        }
+    }
+}
+mitteDubleeri(array(1, 1, 1, 2, 2, 2, 2, 3));
+echo '<hr />';
+?>
