@@ -7,11 +7,16 @@
  */
 function vorm(){
     $serveriArv = $_POST['serveriArv'];
+    $kordadeArv = $_POST['kordadeArv'];
     $serveriArv=isset($serveriArv) ? $_POST['serveriArv']: rand(1,20); //määratud väärtus ?kui 'true' siis muutuja olemas
-    echo $serveriArv.'<br />';
+    $kordadeArv = isset($kordadeArv) ? ++$kordadeArv: 0;
+    echo 'Sisesta arv vahemikus 1 - 20<br />';
+    //echo $serveriArv.'<br />';
     echo '
-   <form action="mang.php" method="post">
+   <form action="'.$_SERVER['PHP_SELF'].'" method="post">
+   <!--<form action="mang.php" method="post"> töötab ka-->
    <input type="hidden" name="serveriArv" value="'.$serveriArv.'">
+   <input type="hidden" name="kordadeArv" value="'.$kordadeArv.'">
    <input type="text" name="kasutajaArv"><br />
    <input type="submit" value="Kontrolli">
    </form>
@@ -22,6 +27,7 @@ function vormiAndmed(){
     echo '<pre>';
     print_r($_POST); /** alt meetod $_POST ja $_GET*/
     echo '<pre>';
+    $korras = false;
     if(empty($_POST)){
         echo 'Vorm ei saatnud andmeid<br />';
     } else {
@@ -45,7 +51,7 @@ function arvuKontroll($kasutajaArv, $serveriArv) {
     }
     if(abs($serveriArv-$kasutajaArv)<=5){
         if($kasutajaArv == $serveriArv){
-            echo 'Õnnitleme! Arvasid ära!<br />';
+            echo 'Õnnitleme! Arvasid ära!<br />'.'Tegid '.++$_POST['kordadeArv'].' katset';
             exit; /**paneb tööprotsessi kinni*/
         }
         echo 'Aga oled juba väga lähedal<br />';
