@@ -7,7 +7,7 @@
  */
 function vorm(){
     $serveriArv = $_POST['serveriArv'];
-    $serveriArv=isset($serveriArv) ? $_POST['serveriArv']: rand(1,20); //määratud väärtus ?kui 'true' siis tegevused...
+    $serveriArv=isset($serveriArv) ? $_POST['serveriArv']: rand(1,20); //määratud väärtus ?kui 'true' siis muutuja olemas
     echo $serveriArv.'<br />';
     echo '
    <form action="mang.php" method="post">
@@ -20,7 +20,7 @@ function vorm(){
 
 function vormiAndmed(){
     echo '<pre>';
-    print_r($_POST); /** alt meetod $_POST ja $GET*/
+    print_r($_POST); /** alt meetod $_POST ja $_GET*/
     echo '<pre>';
     if(empty($_POST)){
         echo 'Vorm ei saatnud andmeid<br />';
